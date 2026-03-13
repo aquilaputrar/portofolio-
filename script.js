@@ -318,3 +318,54 @@ window.addEventListener('click', (e) => {
         closeProjectModal();
     }
 });
+
+// ==========================================
+// Tableau Dashboard Modal Pop-up
+// ==========================================
+const tableauModal = document.getElementById('tableauModal');
+const tableauModalTitle = document.getElementById('tableauModalTitle');
+const tableauModalDesc = document.getElementById('tableauModalDesc');
+
+function openTableauModal(title, desc) {
+    if (!tableauModal) return;
+    tableauModalTitle.textContent = title;
+    tableauModalDesc.textContent = desc;
+    tableauModal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+
+    // Reload Tableau Embed Script if necessary to re-initialize object iframe
+    let existingScript = document.getElementById('tableau-embed-script');
+    if (existingScript) existingScript.remove();
+
+    setTimeout(() => {
+        let divElement = document.getElementById('viz1773413289560');
+        let vizElement = divElement.getElementsByTagName('object')[0];
+
+        // Ensure Tableau is given enough space
+        divElement.style.width = '100%';
+        divElement.style.height = '800px';
+        divElement.style.minWidth = '1100px';
+        vizElement.style.width = '100%';
+        vizElement.style.height = '100%';
+        vizElement.style.minHeight = '100%';
+
+        let scriptElement = document.createElement('script');
+        scriptElement.id = 'tableau-embed-script';
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    }, 300); // 300ms accounts for modal animation transition time
+}
+
+function closeTableauModal() {
+    if (!tableauModal) return;
+    tableauModal.classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+window.addEventListener('click', (e) => {
+    if (e.target === tableauModal) {
+        closeTableauModal();
+    }
+});
+
+

@@ -71,7 +71,7 @@
                     <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact</a>
                 </div>
                 <div class="hero-stats">
-                    <div class="stat-item"><span class="stat-number" data-target="6">0</span><span
+                    <div class="stat-item"><span class="stat-number" data-target="8">0</span><span
                             class="stat-plus">+</span><span class="stat-label">Projects</span></div>
                     <div class="stat-item"><span class="stat-number" data-target="9">0</span><span
                             class="stat-plus">+</span><span class="stat-label">Certificates</span></div>
@@ -120,10 +120,15 @@
                         minat dan antusiasme tinggi di bidang data, khususnya <strong>Data Analysis</strong>,
                         <strong>Data Science</strong>, dan <strong>Data Engineering</strong>.
                     </p>
-                    <p class="about-desc">Berpengalaman sebagai <strong>System & Data Analyst</strong> di PT Sedjahtera
-                        Boga Kreasi, di mana saya membangun sistem tracking penjualan, manajemen stok, dan laporan
-                        analitik untuk 4 outlet. Terampil dalam menggunakan <strong>Python, SQL, Tableau, Power
-                            BI</strong>, dan <strong>Looker Studio</strong>.</p>
+                    <p class="about-desc">Sebagai <strong>Data Analyst</strong> di <strong>Shoe Workshop</strong>, fokus
+                        utama saya adalah melakukan analisis mendalam terhadap <strong>HPP, tren omzet, performa ads &
+                            marketing, dan efisiensi workflow</strong> untuk menghasilkan insight bisnis yang
+                        actionable. Saya membangun <strong>Business Intelligence Dashboard</strong> serta
+                        mengotomatisasi ekosistem operasional menggunakan <strong>Google Apps Script</strong>.</p>
+                    <p class="about-desc">Sebelumnya, di PT Sedjahtera Boga Kreasi, saya berperan sebagai <strong>System
+                            & Data Analyst</strong> yang merancang sistem <em>tracking</em> penjualan otomatis dan
+                        dashboard performa. Terampil mengolah data dengan <strong>SQL, Python, Tableau, Microsoft
+                            Excel</strong>, dan <strong>Looker Studio</strong>.</p>
                     <div class="about-info-grid">
                         <div class="info-item"><i class="fas fa-graduation-cap"></i>
                             <div><span class="info-label">Pendidikan</span><span class="info-value">S1 Informatika,
@@ -157,6 +162,43 @@
                 <div class="title-line"></div>
             </div>
             <div class="timeline">
+                <!-- Data Analyst at Shoe Workshop -->
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Data Analyst</h3>
+                                <p class="timeline-company"><i class="fas fa-building"></i> Shoe Workshop</p>
+                            </div>
+                            <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Sep 2025 — Present</span>
+                        </div>
+                        <!-- Jika lokasi atau sistem kerjanya WFA/Remote, silakan disesuaikan -->
+                        <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Bandung, Jawa Barat</p>
+                        <ul class="timeline-list">
+                            <li>Mengembangkan <strong>&gt;20 script Google Apps Script</strong> untuk otomatisasi
+                                keseluruhan ekosistem operasional bisnis dan komunikasi pelanggan.</li>
+                            <li>Membangun <strong>Data Pipeline Automation</strong> terpusat guna mengonsolidasi data
+                                dari berbagai sheet operasional menjadi satu sistem monitoring yang terintegrasi.</li>
+                            <li>Merancang <strong>Customer Communication Automation</strong> via WhatsApp API untuk
+                                pengiriman otomatis invoice, nomor resi, update status order, serta peringatan
+                                keterlambatan (SLA).</li>
+                            <li>Mengimplementasikan <strong>Feedback Automation</strong> yang terintegrasi untuk
+                                memonitor tingkat kepuasan pelanggan (CSAT) beserta evaluasi layanan secara berkala.
+                            </li>
+                            <li>Membangun <strong>Business Intelligence Dashboard</strong> komprehensif untuk memantau
+                                status order, workflow reparasi, dan pengiriman secara real-time.</li>
+                            <li>Melakukan analisis data operasional dan finansial, termasuk pemetaan tren omzet,
+                                perhitungan Harga Pokok Produksi (bahan & operasional), serta identifikasi bottleneck
+                                efisiensi workflow.</li>
+                            <li>Merancang sistem validasi data dan monitoring operasional pengiriman logistik untuk
+                                meminimalisasi potensi cacat pesan akibat <em>human error</em>.</li>
+                            <li>Menganalisis <strong>performa Digital Ads & Marketing</strong> untuk optimasi budget
+                                iklan dan meningkatkan rasio konversi penjualan.</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="timeline-item reveal-up">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
@@ -190,6 +232,45 @@
             <h2 class="section-title reveal">My <span class="highlight">Projects</span></h2>
 
             <div class="projects-grid">
+
+                <!-- Project Tableau: Player Stats (Static) -->
+                <div class="project-card reveal"
+                    onclick="openProjectModal('assets/projects/tableau_player_stat.png', 'Individual Player Statistics', 'Dashboard performa pemain voli individual yang interaktif dibangun di Tableau. Menganalisis efisiensi serangan, pertahanan, dan perolehan poin tiap set.')">
+                    <div class="project-img-wrapper">
+                        <img src="assets/projects/tableau_player_stat.png" alt="Individual Player Statistics"
+                            class="project-img" style="cursor: pointer; object-fit: cover; object-position: top;">
+                        <div class="project-hover-overlay"><i class="fas fa-search-plus"></i> View Dashboard</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Individual Player Statistics</h3>
+                        <p>Dashboard analitik Tableau untuk memonitor performa dan efisiensi statistik pemain
+                            individual.</p>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Data Viz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Tableau: Disease Map (Interactive) -->
+                <div class="project-card reveal"
+                    onclick="openTableauModal('Disease Mapping Dashboard', 'Peta interaktif hasil pengujian penyakit di berbagai daerah menggunakan Tableau.')">
+                    <div class="project-img-wrapper">
+                        <img src="assets/projects/tableau_disease_map.png" alt="Disease Mapping Dashboard"
+                            class="project-img" style="cursor: pointer; object-fit: cover; object-position: top;">
+                        <div class="project-hover-overlay"><i class="fas fa-search-plus"></i> View Interactive Dashboard
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Disease Mapping Dashboard</h3>
+                        <p>Peta hasil pengujian penyakit tiap daerah yang interaktif untuk analisis sebaran geografis.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">GIS</span>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Project 1 -->
                 <div class="project-card reveal"
@@ -287,6 +368,27 @@
                     </div>
                 </div>
 
+                <!-- Project 6: US Candy Sales Strategy -->
+                <div class="project-card reveal"
+                    onclick="openProjectModal('assets/projects/candy_sales_1.png,assets/projects/candy_sales_2.png,assets/projects/candy_sales_3.png', 'US Candy Sales Strategy Analysis', 'A comprehensive analysis of candy sales across the US, identifying top-performing products and regional distribution patterns to optimize marketing strategies during MSIB Batch 7.')">
+                    <div class="project-img-wrapper">
+                        <img src="assets/projects/candy_sales_1.png" alt="Candy Sales Strategy" class="project-img"
+                            style="cursor: pointer;">
+                        <div class="project-badge-multi"><i class="fas fa-images"></i> 3 Photos</div>
+                        <div class="project-hover-overlay"><i class="fas fa-search-plus"></i> View Project</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>US Candy Sales Strategy Analysis</h3>
+                        <p>Analisis strategi penjualan permen di Amerika Serikat untuk identifikasi top selling products
+                            dan optimasi target pasar.</p>
+                        <div class="project-tags">
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">Strategy</span>
+                            <span class="tag">MSIB Batch 7</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -306,8 +408,9 @@
                     </div>
                     <div class="skill-tags"><span class="skill-tag"><i class="fab fa-python"></i> Python
                             (Pandas)</span><span class="skill-tag"><i class="fas fa-database"></i> SQL</span><span
-                            class="skill-tag"><i class="fab fa-java"></i> Java</span><span class="skill-tag"><i
-                                class="fas fa-code"></i> C++</span><span class="skill-tag"><i class="fab fa-php"></i>
+                            class="skill-tag"><i class="fab fa-js"></i> JavaScript</span><span class="skill-tag"><i
+                                class="fab fa-java"></i> Java</span><span class="skill-tag"><i class="fas fa-code"></i>
+                            C++</span><span class="skill-tag"><i class="fab fa-php"></i>
                             PHP</span></div>
                 </div>
                 <div class="skill-category reveal-up">
@@ -317,6 +420,7 @@
                     <div class="skill-tags"><span class="skill-tag"><i class="fas fa-chart-bar"></i> Tableau</span><span
                             class="skill-tag"><i class="fas fa-chart-line"></i> Power BI</span><span
                             class="skill-tag"><i class="fas fa-chart-area"></i> Looker Studio</span><span
+                            class="skill-tag"><i class="fas fa-file-excel"></i> Microsoft Excel</span><span
                             class="skill-tag"><i class="fas fa-table"></i> Google Sheets</span></div>
                 </div>
                 <div class="skill-category reveal-up">
@@ -324,9 +428,18 @@
                         <h3>Database</h3>
                     </div>
                     <div class="skill-tags"><span class="skill-tag"><i class="fas fa-database"></i>
-                            PostgreSQL</span><span class="skill-tag"><i class="fas fa-database"></i>
+                            MySQL / PostgreSQL</span><span class="skill-tag"><i class="fas fa-database"></i>
                             HeidiSQL</span><span class="skill-tag"><i class="fas fa-database"></i> phpMyAdmin</span>
                     </div>
+                </div>
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-header"><i class="fas fa-robot"></i>
+                        <h3>Automation & API</h3>
+                    </div>
+                    <div class="skill-tags"><span class="skill-tag"><i class="fas fa-bolt"></i> Google Apps
+                            Script</span><span class="skill-tag"><i class="fab fa-whatsapp"></i> WhatsApp
+                            API</span><span class="skill-tag"><i class="fas fa-plug"></i> API Integration</span><span
+                            class="skill-tag"><i class="fas fa-sync"></i> Workflow Automation</span></div>
                 </div>
                 <div class="skill-category reveal-up">
                     <div class="skill-category-header"><i class="fas fa-brain"></i>
@@ -502,6 +615,47 @@
             <div class="modal-caption" style="margin-top:20px;">
                 <h3 id="projectModalTitle"></h3>
                 <p id="projectModalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Tableau Dashboard Popup -->
+    <div id="tableauModal" class="modal">
+        <span class="modal-close" onclick="closeTableauModal()">&times;</span>
+        <div class="modal-content" style="max-width: 1200px; max-height: 95vh; padding: 30px 20px;">
+            <div class="modal-caption" style="margin-bottom:20px;">
+                <h3 id="tableauModalTitle"></h3>
+                <p id="tableauModalDesc"></p>
+            </div>
+            <div id="tableauModalEmbed"
+                style="width:100%; height: 75vh; overflow: auto; background: #fff; border-radius: 8px;">
+                <!-- Tableau viz will be injected here -->
+                <div class='tableauPlaceholder' id='viz1773413289560'
+                    style='position: relative; width: 100%; height: 100%;'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Mapping Hasil Pengujian '
+                                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DA&#47;DASHBOARD_17521256400500&#47;MappingHasilPengujian&#47;1_rss.png'
+                                style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='DASHBOARD_17521256400500&#47;MappingHasilPengujian' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image'
+                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DA&#47;DASHBOARD_17521256400500&#47;MappingHasilPengujian&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object>
+                </div>
             </div>
         </div>
     </div>
