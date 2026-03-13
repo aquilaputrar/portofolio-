@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Aquila Putra Riyanto — Data Analyst.">
+    <title>Aquila Putra Riyanto — Data Analyst Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="12" width="4" height="8" rx="1" fill="#fff" />
+                    <rect x="10" y="8" width="4" height="12" rx="1" fill="#b366ff" />
+                    <rect x="16" y="4" width="4" height="16" rx="1" fill="#7a1aff" />
+                    <path d="M4 14L10 10L16 6L21 2" stroke="url(#line-grad)" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <defs>
+                        <linearGradient id="line-grad" x1="4" y1="14" x2="21" y2="2" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#fff" />
+                            <stop offset="1" stop-color="#b366ff" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">Aquila PR</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Aquila Putra Riyanto, S.Kom</h1>
+                <div class="hero-title-wrapper">
+                    <span class="hero-title-prefix">a </span>
+                    <span class="typing-text" id="typingText"></span><span class="cursor">|</span>
+                </div>
+                <p class="hero-description">Fresh graduate Teknik Informatika dengan passion di bidang data.
+                    Berpengalaman mengubah data mentah menjadi insight bisnis yang actionable.</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary"><i class="fas fa-user"></i> About Me</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item"><span class="stat-number" data-target="6">0</span><span
+                            class="stat-plus">+</span><span class="stat-label">Projects</span></div>
+                    <div class="stat-item"><span class="stat-number" data-target="9">0</span><span
+                            class="stat-plus">+</span><span class="stat-label">Certificates</span></div>
+                    <div class="stat-item gpa-manual">
+                        <span class="gpa-number" style="display: block;">3.60</span>
+                        <span class="stat-label" style="display: block;">GPA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <div class="image-glow"></div>
+                    <img src="assets/profile.png" alt="Aquila Putra Riyanto" class="profile-img">
+                    <div class="image-border"></div>
+
+                    <div class="floating-badge badge-1"><i class="fas fa-chart-bar"></i> Data Analyst</div>
+                    <div class="floating-badge badge-2"><i class="fas fa-database"></i> SQL</div>
+                    <div class="floating-badge badge-3"><i class="fab fa-python"></i> Python</div>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator"><span class="scroll-text">Scroll Down</span>
+            <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+        </a>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-code"></i> Get To Know</span>
+                <h2 class="section-title">About <span class="highlight">Me</span></h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image reveal-left">
+                    <div class="about-img-wrapper">
+                        <img src="assets/profile.png" alt="Aquila Putra Riyanto" class="about-img">
+                        <div class="about-img-overlay"></div>
+                    </div>
+                </div>
+                <div class="about-text reveal-right">
+                    <h3 class="about-subtitle">Data Analyst & Informatics Engineering Graduate</h3>
+                    <p class="about-desc">Saya adalah lulusan <strong>Teknik Informatika</strong> dari <strong>Institut
+                            Teknologi Nasional (ITENAS) Bandung</strong> dengan IPK <strong>3.60/4.00</strong>. Memiliki
+                        minat dan antusiasme tinggi di bidang data, khususnya <strong>Data Analysis</strong>,
+                        <strong>Data Science</strong>, dan <strong>Data Engineering</strong>.
+                    </p>
+                    <p class="about-desc">Berpengalaman sebagai <strong>System & Data Analyst</strong> di PT Sedjahtera
+                        Boga Kreasi, di mana saya membangun sistem tracking penjualan, manajemen stok, dan laporan
+                        analitik untuk 4 outlet. Terampil dalam menggunakan <strong>Python, SQL, Tableau, Power
+                            BI</strong>, dan <strong>Looker Studio</strong>.</p>
+                    <div class="about-info-grid">
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i>
+                            <div><span class="info-label">Pendidikan</span><span class="info-value">S1 Informatika,
+                                    ITENAS</span></div>
+                        </div>
+                        <div class="info-item"><i class="fas fa-map-marker-alt"></i>
+                            <div><span class="info-label">Lokasi</span><span class="info-value">Bandung, Jawa
+                                    Barat</span></div>
+                        </div>
+                        <div class="info-item"><i class="fas fa-briefcase"></i>
+                            <div><span class="info-label">Pengalaman</span><span class="info-value">System & Data
+                                    Analyst</span></div>
+                        </div>
+                        <div class="info-item"><i class="fas fa-star"></i>
+                            <div><span class="info-label">IPK</span><span class="info-value">3.60 / 4.00</span></div>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/aquila-putra-riyanto-230536389/" target="_blank"
+                        class="btn btn-primary"><i class="fab fa-linkedin"></i> View LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-briefcase"></i> Career Path</span>
+                <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">System & Data Analyst</h3>
+                                <p class="timeline-company"><i class="fas fa-building"></i> PT Sedjahtera Boga Kreasi
+                                </p>
+                            </div>
+                            <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Aug — Dec 2024</span>
+                        </div>
+                        <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Bandung, Jawa Barat</p>
+                        <ul class="timeline-list">
+                            <li>Membuat dan memelihara sistem penjualan produk teratas beserta harga, total harga, dan
+                                COGS untuk 4 outlet</li>
+                            <li>Membuat sistem tracking penjualan otomatis untuk 4 outlet</li>
+                            <li>Membuat dan memelihara sistem nilai stok untuk 4 outlet, 4 gudang, dan 1 CK</li>
+                            <li>Membuat sistem manajemen buffer stock untuk 4 gudang</li>
+                            <li>Mengambil dataset menggunakan API untuk kebutuhan sistem data</li>
+                            <li>Membuat laporan tren penjualan beserta menu terlaris untuk setiap outlet</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <h2 class="section-title reveal">My <span class="highlight">Projects</span></h2>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card reveal"
+                    onclick="openProjectModal('assets/projects/porto_page_6.png', 'Prophet Algorithm Forecasting', 'Developed a forecasting system using Facebook Prophet to predict meatball menu demand across outlets based on time period. Achieved MAPE < 20%.')">
+                    <div class="project-img-wrapper">
+                        <img src="assets/projects/porto_page_6.png" alt="Prophet Forecasting" class="project-img"
+                            style="cursor: pointer;">
+                        <div class="project-hover-overlay"><i class="fas fa-search-plus"></i> View Project</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Prophet Algorithm Forecasting</h3>
+                        <p>Prediksi penjualan menu berdasarkan periode waktu menggunakan algoritma Prophet dari
+                            Facebook.</p>
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Multi Images) -->
+                <div class="project-card reveal"
+                    onclick="openProjectModal('assets/projects/porto_page_7.png,assets/projects/porto_page_8.png', 'Sales Performance & Tracking Dashboard', 'Created a comprehensive sales dashboard to analyze top-selling menu items and track sales across 4 outlets, including trend graphs and statistical filters.')">
+                    <div class="project-img-wrapper">
+                        <img src="assets/projects/porto_page_7.png" alt="Sales Dashboard" class="project-img"
+                            style="cursor: pointer;">
+                        <div class="project-badge-multi"><i class="fas fa-images"></i> 2 Photos</div>
+                        <div class="project-hover-overlay"><i class="fas fa-search-plus"></i> View Project</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Sales Performance & Tracking</h3>
+                        <p>Sistem tracking penjualan otomatis dan dashboard performa penjualan menu dari outlet PT
+                            Sedjahtera Boga Kreasi.</p>
+                        <div class="project-tags">
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">Data Viz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal"
+                    onclick="openProjectModal('assets/projects/porto_page_9.png', 'Musician Performance Dashboard', 'A scorecard displaying the musician with the highest streams across four platforms, including bar charts and pie charts illustration.')">
+                    <div class="project-img-wrapper">
+                        <img src="assets/projects/porto_page_9.png" alt="Musician Performance" class="project-img"
+                            style="cursor: pointer;">
+                        <div class="project-hover-overlay"><i class="fas fa-search-plus"></i> View Project</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Musician Performance Dashboard</h3>
+                        <p>Visualisasi streams musisi teratas di berbagai platform musik menggunakan berbagai tipe
+                            chart.</p>
+                        <div class="project-tags">
+                            <span class="tag">Analytics</span>
+                            <span class="tag">Dashboard</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card reveal"
+                    onclick="openProjectModal('assets/projects/porto_page_10.png', 'IMDB Rating & Campaign Optimization', 'Scraped IMDB data using BeautifulSoup to visualize highest ratings. Analyzed marketing campaign data to find ROI-optimized strategies for the 2022 marketing team.')">
+                    <div class="project-img-wrapper">
+                        <img src="assets/projects/porto_page_10.png" alt="IMDB Campaign" class="project-img"
+                            style="cursor: pointer;">
+                        <div class="project-hover-overlay"><i class="fas fa-search-plus"></i> View Project</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>IMDB Rating & Campaign Analysis</h3>
+                        <p>Web scraping data IMDB dengan BeautifulSoup dan analisis optimasi performa Campaign Marketing
+                            2022.</p>
+                        <div class="project-tags">
+                            <span class="tag">Web Scraping</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card reveal"
+                    onclick="openProjectModal('assets/projects/porto_page_11.png', 'Clustering & Data Analysis', 'Applied Ward clustering method to determine optimal clusters (evaluated with Davies-Bouldin Index) and analyzed wealth distribution.')">
+                    <div class="project-img-wrapper">
+                        <img src="assets/projects/porto_page_11.png" alt="Clustering Analytics" class="project-img"
+                            style="cursor: pointer;">
+                        <div class="project-hover-overlay"><i class="fas fa-search-plus"></i> View Project</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Clustering & Distribution Analysis</h3>
+                        <p>Penggunaan metode Ward clustering dengan evaluasi Davies-Bouldin Index, serta pembuatan
+                            dashboard analisis distribusi kekayaan.</p>
+                        <div class="project-tags">
+                            <span class="tag">Data Science</span>
+                            <span class="tag">Clustering</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-cogs"></i> What I Know</span>
+                <h2 class="section-title">Skills & <span class="highlight">Tools</span></h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-header"><i class="fas fa-code"></i>
+                        <h3>Programming</h3>
+                    </div>
+                    <div class="skill-tags"><span class="skill-tag"><i class="fab fa-python"></i> Python
+                            (Pandas)</span><span class="skill-tag"><i class="fas fa-database"></i> SQL</span><span
+                            class="skill-tag"><i class="fab fa-java"></i> Java</span><span class="skill-tag"><i
+                                class="fas fa-code"></i> C++</span><span class="skill-tag"><i class="fab fa-php"></i>
+                            PHP</span></div>
+                </div>
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-header"><i class="fas fa-chart-pie"></i>
+                        <h3>Data & Visualization</h3>
+                    </div>
+                    <div class="skill-tags"><span class="skill-tag"><i class="fas fa-chart-bar"></i> Tableau</span><span
+                            class="skill-tag"><i class="fas fa-chart-line"></i> Power BI</span><span
+                            class="skill-tag"><i class="fas fa-chart-area"></i> Looker Studio</span><span
+                            class="skill-tag"><i class="fas fa-table"></i> Google Sheets</span></div>
+                </div>
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-header"><i class="fas fa-server"></i>
+                        <h3>Database</h3>
+                    </div>
+                    <div class="skill-tags"><span class="skill-tag"><i class="fas fa-database"></i>
+                            PostgreSQL</span><span class="skill-tag"><i class="fas fa-database"></i>
+                            HeidiSQL</span><span class="skill-tag"><i class="fas fa-database"></i> phpMyAdmin</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-header"><i class="fas fa-brain"></i>
+                        <h3>Hard Skills</h3>
+                    </div>
+                    <div class="skill-tags"><span class="skill-tag"><i class="fas fa-broom"></i> Data
+                            Cleaning</span><span class="skill-tag"><i class="fas fa-project-diagram"></i> Data
+                            Mining</span><span class="skill-tag"><i class="fas fa-chart-bar"></i> Data
+                            Visualization</span><span class="skill-tag"><i class="fas fa-file-alt"></i> Data
+                            Formatting</span></div>
+                </div>
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-header"><i class="fas fa-laptop-code"></i>
+                        <h3>Software & IDE</h3>
+                    </div>
+                    <div class="skill-tags"><span class="skill-tag"><i class="fas fa-code"></i> VS Code</span><span
+                            class="skill-tag"><i class="fas fa-code"></i> PyCharm</span><span class="skill-tag"><i
+                                class="fab fa-google"></i> Google Colab</span><span class="skill-tag"><i
+                                class="fas fa-file-powerpoint"></i> PowerPoint</span></div>
+                </div>
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-header"><i class="fas fa-handshake"></i>
+                        <h3>Soft Skills</h3>
+                    </div>
+                    <div class="skill-tags"><span class="skill-tag"><i class="fas fa-clock"></i> Time
+                            Management</span><span class="skill-tag"><i class="fas fa-lightbulb"></i> Analytical
+                            Thinking</span><span class="skill-tag"><i class="fas fa-puzzle-piece"></i> Problem
+                            Solving</span><span class="skill-tag"><i class="fas fa-comments"></i> Team
+                            Communication</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section education" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-graduation-cap"></i> Academic</span>
+                <h2 class="section-title">Education <span class="highlight">Background</span></h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="education-card reveal-up">
+                <div class="edu-icon"><i class="fas fa-university"></i></div>
+                <div class="edu-content">
+                    <h3 class="edu-degree">S1 Informatika</h3>
+                    <p class="edu-school"><i class="fas fa-building-columns"></i> Institut Teknologi Nasional (ITENAS)
+                    </p>
+                    <p class="edu-year"><i class="fas fa-calendar-alt"></i> 2021 — 2025</p>
+                    <span class="edu-gpa"><i class="fas fa-star"></i> GPA: 3.60 / 4.00</span>
+                    <p class="edu-courses"><strong>Relevant Courses:</strong> Machine Learning, Artificial Intelligence,
+                        Data Mining</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates -->
+    <section class="section certificates" id="certificates">
+        <div class="container">
+            <h2 class="section-title reveal">My <span class="highlight">Certificates</span></h2>
+            <div class="certificates-grid">
+
+                <div class="cert-item reveal"
+                    onclick="openCertModal('assets/certificates/Sertifikat_DATA_ANALYST_ACADEMY_Batch_7_AQUILA_PUTRA_RIYANTO_(1).png', 'Sertifikat Data Analyst', 'Studi Independen Bersertifikat MSIB Angkatan 7 oleh Kementerian Komunikasi dan Informatika.')">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-meta">
+                        <h4>Data Analyst Academy Batch 7</h4>
+                        <div class="cert-org"><i class="fas fa-building"></i> Kominfo / PT. Cendekia Data Andalan</div>
+                        <div class="cert-date"><i class="far fa-calendar-alt"></i> Sep - Dec 2024</div>
+                    </div>
+                </div>
+
+                <div class="cert-item reveal"
+                    onclick="openCertModal('assets/certificates/Sertifikat_Kompetensi_DATA_ANALYST_ACADEMY__AQUILA_PUTRA_RIYANTO_(1).png', 'Sertifikat Kompetensi Data Analyst', 'Bukti kompetensi Data Analyst Academy Kampus Merdeka MSIB Angkatan 7.')">
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
+                    <div class="cert-meta">
+                        <h4>Sertifikat Kompetensi Data Analyst</h4>
+                        <div class="cert-org"><i class="fas fa-building"></i> Kominfo / Kampus Merdeka</div>
+                        <div class="cert-date"><i class="far fa-calendar-alt"></i> 2024</div>
+                    </div>
+                </div>
+
+                <div class="cert-item reveal"
+                    onclick="openCertModal('assets/certificates/Aquila_putra_riyanto_-_E-Sertifikat_SC_Data_Analysis_MySkill_x_Deloitte_Oktober_2023.png', 'Data Analysis Bootcamp', 'Penyelesaian kursus Data Analysis yang diselenggarakan oleh MySkill bekerja sama dengan Deloitte.')">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-meta">
+                        <h4>Data Analysis Bootcamp</h4>
+                        <div class="cert-org"><i class="fas fa-building"></i> MySkill x Deloitte</div>
+                        <div class="cert-date"><i class="far fa-calendar-alt"></i> Okt 2023</div>
+                    </div>
+                </div>
+
+                <div class="cert-item reveal"
+                    onclick="openCertModal('assets/certificates/SertifikatDA.png', 'Data Analyst Fullstack Intensive', 'Materi Data Analyst, Statistics, Pandas, SQL & Data Visualization.')">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-meta">
+                        <h4>Data Analyst Intensive Bootcamp</h4>
+                        <div class="cert-org"><i class="fas fa-building"></i> MySkill</div>
+                        <div class="cert-date"><i class="far fa-calendar-alt"></i> 2024</div>
+                    </div>
+                </div>
+
+                <div class="cert-item reveal"
+                    onclick="openCertModal('assets/certificates/python_certificate.png', 'Python Basic Certificate', 'Sertifikat kelulusan tes kompetensi dasar pengelolaan bahasa pemrograman Python.')">
+                    <div class="cert-icon"><i class="fab fa-python"></i></div>
+                    <div class="cert-meta">
+                        <h4>Python Basic</h4>
+                        <div class="cert-org"><i class="fas fa-building"></i> HackerRank</div>
+                    </div>
+                </div>
+
+                <div class="cert-item reveal"
+                    onclick="openCertModal('assets/certificates/sql_basic_certificate.png', 'SQL Basic Certificate', 'Kelulusan tes kompetensi SQL level dasar yang mencakup manipulasi query relasional.')">
+                    <div class="cert-icon"><i class="fas fa-database"></i></div>
+                    <div class="cert-meta">
+                        <h4>SQL Basic</h4>
+                        <div class="cert-org"><i class="fas fa-building"></i> HackerRank</div>
+                    </div>
+                </div>
+
+                <div class="cert-item reveal"
+                    onclick="openCertModal('assets/certificates/sql_intermediate_certificate.png', 'SQL Intermediate Certificate', 'Kelulusan tes kompetensi SQL level menengah meliputi join kompleks dan subquery.')">
+                    <div class="cert-icon"><i class="fas fa-database"></i></div>
+                    <div class="cert-meta">
+                        <h4>SQL Intermediate</h4>
+                        <div class="cert-org"><i class="fas fa-building"></i> HackerRank</div>
+                    </div>
+                </div>
+
+                <div class="cert-item reveal"
+                    onclick="openCertModal('assets/certificates/sql_advanced_certificate.png', 'SQL Advanced Certificate', 'Sertifikasi SQL level advanced mencakup optimasi dan window function.')">
+                    <div class="cert-icon"><i class="fas fa-database"></i></div>
+                    <div class="cert-meta">
+                        <h4>SQL Advanced</h4>
+                        <div class="cert-org"><i class="fas fa-building"></i> HackerRank</div>
+                    </div>
+                </div>
+
+                <div class="cert-item reveal"
+                    onclick="openCertModal('assets/certificates/Sertifikat_Organisasi.png', 'Sertifikat Organisasi HIMATIF', 'Pengalaman berorganisasi dalam Himpunan Mahasiswa Teknik Informatika (HIMATIF).')">
+                    <div class="cert-icon"><i class="fas fa-users"></i></div>
+                    <div class="cert-meta">
+                        <h4>Pengurus Organisasi HIMATIF</h4>
+                        <div class="cert-org"><i class="fas fa-building"></i> Institut Teknologi Nasional</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Certificate Popup -->
+    <div id="certModal" class="modal">
+        <span class="modal-close" onclick="closeCertModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="Certificate View">
+            <div class="modal-caption">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Project Multiple Images Popup -->
+    <div id="projectModal" class="modal">
+        <span class="modal-close" onclick="closeProjectModal()">&times;</span>
+        <div class="modal-content" style="max-width: 1000px; max-height: 95vh; padding: 30px 20px;">
+            <div id="projectModalImages"
+                style="display:flex; flex-direction:column; gap:20px; width:100%; max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+                <!-- Images injected via JS -->
+            </div>
+            <div class="modal-caption" style="margin-top:20px;">
+                <h3 id="projectModalTitle"></h3>
+                <p id="projectModalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-paper-plane"></i> Get In Touch</span>
+                <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="contact-content">
+                <p class="contact-desc reveal-up">Tertarik untuk berkolaborasi atau punya pertanyaan? Jangan ragu untuk
+                    menghubungi saya!</p>
+                <div class="contact-cards">
+                    <a href="mailto:aquilaputrar@gmail.com" class="contact-card reveal-up" target="_blank">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <h3>Email</h3>
+                        <p>aquilaputrar@gmail.com</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aquila-putra-riyanto-230536389/" class="contact-card reveal-up"
+                        target="_blank">
+                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                        <h3>LinkedIn</h3>
+                        <p>Aquila Putra Riyanto</p>
+                    </a>
+                    <a href="https://github.com/AquilaPR" class="contact-card reveal-up" target="_blank">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <h3>GitHub</h3>
+                        <p>AquilaPR</p>
+                    </a>
+                    <a href="tel:+62859106953807" class="contact-card reveal-up">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <h3>Phone</h3>
+                        <p>(+62) 859-1069-53807</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#hero" class="footer-logo">
+                    <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="12" width="4" height="8" rx="1" fill="#fff" />
+                        <rect x="10" y="8" width="4" height="12" rx="1" fill="#b366ff" />
+                        <rect x="16" y="4" width="4" height="16" rx="1" fill="#7a1aff" />
+                        <path d="M4 14L10 10L16 6L21 2" stroke="url(#f-line-grad)" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <defs>
+                            <linearGradient id="f-line-grad" x1="4" y1="14" x2="21" y2="2"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fff" />
+                                <stop offset="1" stop-color="#b366ff" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text">Aquila PR</span>
+                </a>
+                <p class="footer-text">&copy; 2025 Aquila Putra Riyanto. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="mailto:aquilaputrar@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/aquila-putra-riyanto-230536389/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/AquilaPR" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
