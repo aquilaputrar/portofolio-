@@ -368,4 +368,123 @@ window.addEventListener('click', (e) => {
     }
 });
 
+// ==========================================
+// Aquila AI Chatbot Logic
+// ==========================================
+// GANTI "ISI_API_KEY_DISINI" dengan API Key dari Google AI Studio (https://aistudio.google.com/)
+const GEMINI_API_KEY = "AIzaSyDtyEOm6jHee9-u2feJKjSUYVgTGAf9rfQ";
+
+const chatbotToggle = document.getElementById('chatbot-toggle');
+const chatbotWindow = document.getElementById('chatbot-window');
+const chatbotClose = document.getElementById('chatbot-close');
+const chatbotForm = document.getElementById('chatbot-input-form');
+const chatbotInput = document.getElementById('chatbot-input');
+const chatbotMessages = document.getElementById('chatbot-messages');
+
+// System Prompt: Brain of the AI
+const systemPrompt = `Kamu adalah Aquila AI, asisten virtual profesional untuk portofolio Aquila Putra Riyanto.
+Profil Aquila:
+- Lulusan S1 Informatika ITENAS Bandung (IPK 3.60).
+- Pekerjaan Sekarang: Data Analyst di Shoe Workshop (Fokus: Google Apps Script automation, Data Pipeline, WhatsApp API, BI Dashboard, Analisis HPP/Omzet).
+- Pengalaman Sebelumnya: System & Data Analyst di PT Sedjahtera Boga Kreasi (Fokus: Tracking penjualan, Dashboard performa, SQL API).
+- Keahlian Teknis: Python (Pandas/Prophet), SQL (MySQL/PostgreSQL), Tableau, Power BI, Looker Studio, Web Scraping (BeautifulSoup).
+- Proyek Unggulan: Forecasting menu dengan Prophet, Dashboard GIS penyakit (Tableau), Analisis strategi Candy Sales US.
+
+Tugas kamu:
+1. Jawab pertanyaan pengunjung/rekruter seputar jati diri, skill, dan pengalaman Aquila.
+2. Gunakan Bahasa Indonesia yang sopan, ramah, dan ringkas.
+3. Selalu arahkan jawaban untuk menunjukkan bahwa Aquila adalah kandidat Data Analyst yang kompeten dan haus akan otomasi.
+4. Jika ditanya hal di luar karir Aquila, jawab secara sopan bahwa tugasmu hanya membantu menjelaskan portofolio Aquila.`;
+
+let chatHistory = [];
+
+chatbotToggle.addEventListener('click', () => {
+    chatbotWindow.classList.toggle('show');
+    if (chatbotWindow.classList.contains('show')) {
+        chatbotInput.focus();
+    }
+});
+
+chatbotClose.addEventListener('click', () => {
+    chatbotWindow.classList.remove('show');
+});
+
+function addMessage(text, isUser = false) {
+    const msgDiv = document.createElement('div');
+    msgDiv.classList.add('message');
+    msgDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+    msgDiv.textContent = text;
+    chatbotMessages.appendChild(msgDiv);
+    // Auto scroll bottom
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function showTyping() {
+    const typing = document.createElement('div');
+    typing.id = 'typing-indicator-wrapper';
+    typing.classList.add('message', 'bot-message');
+    typing.innerHTML = '<div class="typing-indicator"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>';
+    chatbotMessages.appendChild(typing);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function hideTyping() {
+    const typing = document.getElementById('typing-indicator-wrapper');
+    if (typing) typing.remove();
+}
+
+async function callGemini(userText) {
+    if (!GEMINI_API_KEY || GEMINI_API_KEY.includes("ISI_API_KEY")) {
+        return "Maaf, API Key Gemini belum dikonfigurasi. Aquila perlu memasukkan API Key di file script.js agar saya bisa berpikir!";
+    }
+
+    // Menggunakan Gemini 2.0 Flash (Cepat & Handal)
+    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+
+    // Construct message history including system prompt
+    const contents = [
+        { role: "user", parts: [{ text: `INSTRUKSI SISTEM: ${systemPrompt}` }] },
+        { role: "model", parts: [{ text: "Siap, saya mengerti. Saya akan bertindak sebagai asisten virtual Aquila Putra Riyanto." }] },
+        ...chatHistory,
+        { role: "user", parts: [{ text: userText }] }
+    ];
+
+    try {
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contents: contents })
+        });
+
+        if (!response.ok) throw new Error('API request failed');
+
+        const data = await response.json();
+        const botResponse = data.candidates[0].content.parts[0].text;
+
+        // Update history (max 8 messages for context efficiency)
+        chatHistory.push({ role: "user", parts: [{ text: userText }] });
+        chatHistory.push({ role: "model", parts: [{ text: botResponse }] });
+        if (chatHistory.length > 8) chatHistory = chatHistory.slice(-8);
+
+        return botResponse;
+    } catch (error) {
+        console.error("Gemini Error:", error);
+        return "Mohon maaf, terjadi gangguan pada otak AI saya. Silakan coba kirim ulang pesan Anda atau hubungi Aquila melalui LinkedIn/Email.";
+    }
+}
+
+chatbotForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const text = chatbotInput.value.trim();
+    if (!text) return;
+
+    addMessage(text, true);
+    chatbotInput.value = '';
+
+    showTyping();
+    const response = await callGemini(text);
+    hideTyping();
+    addMessage(response);
+});
+
 

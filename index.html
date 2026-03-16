@@ -731,6 +731,36 @@
             </div>
         </div>
     </footer>
+    <!-- AI Chatbot UI -->
+    <div id="chatbot-container">
+        <button id="chatbot-toggle" aria-label="Buka Chatbot">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div id="chatbot-window">
+            <div id="chatbot-header">
+                <div class="chatbot-header-info">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h3>Aquila AI</h3>
+                        <span class="status-online">Online</span>
+                    </div>
+                </div>
+                <button id="chatbot-close" aria-label="Tutup Chatbot">&times;</button>
+            </div>
+            <div id="chatbot-messages">
+                <div class="message bot-message">
+                    Halo! Saya Aquila AI. Ada yang bisa saya bantu seputar pengalaman atau porto Aquila?
+                </div>
+            </div>
+            <form id="chatbot-input-form">
+                <input type="text" id="chatbot-input" placeholder="Tanya sesuatu..." autocomplete="off">
+                <button type="submit" id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
