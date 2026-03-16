@@ -371,10 +371,9 @@ window.addEventListener('click', (e) => {
 // ==========================================
 // Aquila AI Chatbot Logic - Updated: 2026-03-16 10:28
 // ==========================================
-// GANTI "ISI_API_KEY_DISINI" dengan API Key dari Google AI Studio (https://aistudio.google.com/)
-// API Key disamarkan agar tidak diblokir otomatis oleh GitHub/Google
-const _0x4a2e = "QUl6YVN5RHU1Ml9XYUMtelZ1eXJDN19EMVlkODBwMDBCcGRscXJR";
-const GEMINI_API_KEY = atob(_0x4a2e);
+// API Key disimpan aman di Cloudflare Worker (Proxy)
+const PROXY_URL = "https://sparkling-river-0148.aquilapr0706.workers.dev/";
+
 
 
 
@@ -439,12 +438,12 @@ function hideTyping() {
 }
 
 async function callGemini(userText) {
-    if (!GEMINI_API_KEY || GEMINI_API_KEY.length < 10) {
-        return "Maaf, API Key Gemini belum dikonfigurasi dengan benar. Silakan hubungi Aquila.";
+    if (!PROXY_URL || PROXY_URL.includes("workers.dev") === false) {
+        return "Maaf, sistem AI sedang dalam pemeliharaan (Proxy belum siap).";
     }
 
-    // Menggunakan Gemini 1.5 Flash (v1beta untuk akses lebih luas)
-    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+    // Menggunakan Proxy Cloudflare (Gemini 1.5 Flash di belakang layar)
+    const API_URL = PROXY_URL;
 
     // Construct message history including system prompt
     const contents = [
