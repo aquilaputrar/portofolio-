@@ -369,7 +369,7 @@ window.addEventListener('click', (e) => {
 });
 
 // ==========================================
-// Aquila AI Chatbot Logic
+// Aquila AI Chatbot Logic - Updated: 2026-03-16 10:28
 // ==========================================
 // GANTI "ISI_API_KEY_DISINI" dengan API Key dari Google AI Studio (https://aistudio.google.com/)
 const GEMINI_API_KEY = "AIzaSyDtyE0m6jHeE9-u2feJKjSUYVgTGAf9rfQ";
