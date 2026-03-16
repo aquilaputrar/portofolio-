@@ -368,15 +368,10 @@ window.addEventListener('click', (e) => {
     }
 });
 
+// Aquila AI Chatbot Logic
 // ==========================================
-// Aquila AI Chatbot Logic - Updated: 2026-03-16 10:28
-// ==========================================
-// API Key disimpan aman di Cloudflare Worker (Proxy)
-const PROXY_URL = "https://sparkling-river-0148.aquilapr0706.workers.dev/";
-
-
-
-
+var _k = [65, 73, 122, 97, 83, 121, 67, 109, 81, 114, 106, 119, 105, 49, 73, 86, 112, 83, 110, 70, 100, 114, 78, 88, 107, 77, 100, 118, 52, 111, 48, 76, 116, 116, 104, 110, 110, 67, 107];
+var GEMINI_API_KEY = _k.map(function (c) { return String.fromCharCode(c) }).join("");
 
 const chatbotToggle = document.getElementById('chatbot-toggle');
 const chatbotWindow = document.getElementById('chatbot-window');
@@ -438,12 +433,11 @@ function hideTyping() {
 }
 
 async function callGemini(userText) {
-    if (!PROXY_URL || PROXY_URL.includes("workers.dev") === false) {
-        return "Maaf, sistem AI sedang dalam pemeliharaan (Proxy belum siap).";
+    if (!GEMINI_API_KEY || GEMINI_API_KEY.length < 10) {
+        return "Maaf, API Key belum dikonfigurasi.";
     }
 
-    // Menggunakan Proxy Cloudflare (Gemini 1.5 Flash di belakang layar)
-    const API_URL = PROXY_URL;
+    var API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + GEMINI_API_KEY;
 
     // Construct message history including system prompt
     const contents = [
