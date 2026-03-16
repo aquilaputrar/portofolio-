@@ -372,7 +372,8 @@ window.addEventListener('click', (e) => {
 // Aquila AI Chatbot Logic
 // ==========================================
 // GANTI "ISI_API_KEY_DISINI" dengan API Key dari Google AI Studio (https://aistudio.google.com/)
-const GEMINI_API_KEY = "AIzaSyDtyEOm6jHee9-u2feJKjSUYVgTGAf9rfQ";
+const GEMINI_API_KEY = "AIzaSyDtyE0m6jHeE9-u2feJKjSUYVgTGAf9rfQ";
+
 
 const chatbotToggle = document.getElementById('chatbot-toggle');
 const chatbotWindow = document.getElementById('chatbot-window');
