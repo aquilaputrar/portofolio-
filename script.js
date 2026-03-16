@@ -439,8 +439,8 @@ async function callGemini(userText) {
         return "Maaf, API Key Gemini belum dikonfigurasi. Aquila perlu memasukkan API Key di file script.js agar saya bisa berpikir!";
     }
 
-    // Menggunakan Gemini 1.5 Flash (Lebih Stabil untuk v1)
-    const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+    // Menggunakan Gemini 1.5 Flash (v1beta untuk akses lebih luas)
+    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
     // Construct message history including system prompt
     const contents = [
